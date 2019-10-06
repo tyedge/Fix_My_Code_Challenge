@@ -15,11 +15,31 @@ class Square():
             for key, value in kwargs.items():
                 if key in new:
                     setattr(self, key, value)
-        """
         if kwargs['width'] == kwargs['height']:
-            self.width = width
-            self.height = height
-        """
+            self.width = kwargs['width']
+            self.height = kwargs['height']
+
+
+#    @property
+ #   def width(self):
+        """ This getter function returns the size of a Square instance """
+  #      return self.width, self.height
+
+   # @width.setter
+    #def width_height(self, width, height):
+        """ This setter function validates and sets the size of a Square\
+        instance """
+     #   if type(width) is not int:
+      #      raise TypeError("width must be an integer")
+       # if width <= 0:
+        #    raise ValueError("width must be > 0")
+        #if type(height) is not int:
+         #   raise TypeError("width must be an integer")
+        #if height <= 0:
+         #   raise ValueError("width must be > 0")
+        #if kwargs['width'] == kwargs['height']:
+         #   self.width = kwargs['width']
+          #  self.height = kwargs['height']
 
     def area_of_my_square(self):
         """ Area of the square """
