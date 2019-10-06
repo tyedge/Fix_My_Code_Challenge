@@ -3,14 +3,18 @@
 
 
 class Square():
-
+    """ This class defines square instances """
     width = 0
     height = 0
 
     def __init__(self, *args, **kwargs):
         """ New instance of a square """
+
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+        self.width = kwargs['width']
+        self.height = kwargs['height']
 
     def area_of_my_square(self):
         """ Area of the square """
