@@ -8,36 +8,19 @@ class Square():
     width = 0
     height = 0
 
-    def __init__(self, size=0):
+    def __init__(self, *args, **kwargs):
         """ New instance of a square """
-        self.width = size
-        self.height = size
-
-    def update(self, *args, **kwargs):
-        """ New instance of a square """
-        new = ['width', 'height', 'size']
+        new = ['width', 'height']
         if not args:
             for key, value in kwargs.items():
                 if key in new:
                     setattr(self, key, value)
-                self.width = kwargs[key]
-                self.height = kwargs[key]
-
-    @property
-    def size(self):
-        """ This getter function returns the size of a Square instance """
-        return self.size
-
-    @size.setter
-    def size(self, size):
-        """ This setter function validates and sets the size of a Square\
-        instance """
-        if type(size) is not int:
-            raise TypeError("width must be an integer")
-        if size <= 0:
-            raise ValueError("width must be > 0")
-        self.width = size
-        self.height = size
+            if kwargs['width'] == kwargs['height']:
+                self.width = kwargs['width']
+                self.height = kwargs['height']
+            else:
+                self.width = kwargs['width']
+                self.height = kwargs['width']
 
     def area_of_my_square(self):
         """ Area of the square """
@@ -52,7 +35,7 @@ class Square():
         return "{}/{}".format(self.width, self.height)
 
 if __name__ == "__main__":
-    s = Square(size=12)
+    s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
     print(s.perimeter_of_my_square())
