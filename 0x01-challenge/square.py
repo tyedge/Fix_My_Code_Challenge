@@ -2,7 +2,7 @@
 """ This module defines the Square class """
 
 
-class Square():
+class square():
     """ This class defines square instances """
 
     width = 0
@@ -29,7 +29,7 @@ class Square():
         return "{}/{}".format(self.width, self.height)
 
 if __name__ == "__main__":
-    s = Square(width=12, height=9)
+    s = square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
     print(s.PermiterOfMySquare())
